@@ -64,6 +64,33 @@
         margin-bottom: 2rem;
     }
 
+    /* Hero Banner */
+    .hero-banner {
+        background: linear-gradient(135deg, #161b22 0%, #1e242c 100%);
+        border: 1px solid #30363d;
+        border-radius: 12px;
+        padding: 2.2rem;
+        margin: 1.8rem auto;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        color: #FF9900;
+        margin-bottom: 1.2rem;
+        font-weight: 700;
+    }
+
+    .hero-text {
+        max-width: 780px;
+        margin: 0 auto;
+        color: #c9d1d9;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        opacity: 0.95;
+    }
+
     /* Cards */
     .card {
         background: #21262d;
@@ -163,6 +190,7 @@
 
 <div class="container">
 
+    <!-- TITLE -->
     <div class="title-area">
         <h1>Folding Benelux – Folding@home Team 1067639</h1>
         <p>Distributed Computing for Belgium • Netherlands • Luxembourg</p>
@@ -177,14 +205,36 @@
         </svg>"
     />
 
+    <!-- HERO MANIFESTO -->
+    <div class="hero-banner">
+        <h2 class="hero-title">Why We Fold</h2>
+        <p class="hero-text">
+            We believe in using what we have to push science forward — not in theory 
+            or in committees, but in computation: raw, measurable, continuous.
+            <br><br>
+            Every machine here, from workstations to laptops to decade-old towers running
+            one more cycle, contributes to something larger: molecular simulations that accelerate
+            biomedical research and help scientists understand diseases faster.
+            <br><br>
+            Folding Benelux exists for one reason — to represent Belgium, the Netherlands, 
+            and Luxembourg as a unified technical footprint. We contribute quietly, consistently, 
+            without ego. Because progress isn’t loud; it’s cumulative.
+            <br><br>
+            Welcome to Folding Benelux.  
+            Let’s compute something that lasts.
+        </p>
+    </div>
+
     <!-- Team ID -->
     <div class="team-id">Team ID: 1067639</div>
 
+    <!-- LIVE STATS -->
     <h2>Live Team Stats</h2>
     <div id="statsBox" class="stats-box">
         <p>Fetching live stats…</p>
     </div>
 
+    <!-- LEADERBOARD -->
     <h2>Member Leaderboard</h2>
     <div class="card">
         <table id="leaderboard">
@@ -192,6 +242,7 @@
         </table>
     </div>
 
+    <!-- HARDWARE FARM -->
     <h2>Your Folding Farm</h2>
 
     <div class="hardware-grid">
@@ -232,33 +283,36 @@
         </div>
     </div>
 
+    <!-- HOW TO JOIN -->
     <h2>How to Join Folding Benelux</h2>
     <div class="card">
         <ol>
             <li>Install the Folding@home client</li>
-            <li>Open the Configure → Identity tab</li>
+            <li>Open Configure → Identity</li>
             <li>Enter Team ID: <strong>1067639</strong></li>
-            <li>Save — and start folding!</li>
+            <li>Save — and begin folding!</li>
         </ol>
         <p>
-            Live Stats:  
+            Live Team Stats:  
             <a href="https://stats.foldingathome.org/team/1067639" target="_blank">
                 https://stats.foldingathome.org/team/1067639
             </a>
         </p>
     </div>
 
+    <!-- ROADMAP -->
     <h2>Team Roadmap</h2>
     <div class="card">
         <ul>
             <li>Recruit first 5 active Benelux members</li>
-            <li>Reach global top 5,000 teams</li>
+            <li>Reach global Top 5,000 teams</li>
             <li>20M+ combined PPD milestone</li>
             <li>Public leaderboard integration</li>
-            <li>Eventually — regional FAH community hub</li>
+            <li>Long-term: Build a Benelux FAH hub</li>
         </ul>
     </div>
 
+    <!-- BADGES -->
     <h2>Badges</h2>
     <div class="badge-box">
         <p>Downloadable SVG badges:</p>
@@ -315,12 +369,12 @@ async function fetchStats() {
 
     } catch(err) {
         console.error(err);
-        document.getElementById("statsBox").innerHTML = "<p>Unable to fetch live stats.</p>";
+        document.getElementById("statsBox").innerHTML = "<p>Team stats will appear after the first completed Work Unit.</p>";
     }
 }
 
 fetchStats();
-setInterval(fetchStats, 30000); // 30 seconds
+setInterval(fetchStats, 30000);
 </script>
 
 </body>
