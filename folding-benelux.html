@@ -76,7 +76,7 @@ quietly, consistently, without ego. Progress isn’t loud; it’s cumulative.</p
 // Fetch Team Stats
 async function loadTeam(){
 try{
-let r=await fetch("https://stats.foldingathome.org/api/team/1067639");
+let r=await fetch("/data/team.json");
 let d=await r.json();
 document.getElementById("statsBox").innerHTML=`
 <b>Rank:</b> ${d.rank}<br>
@@ -96,7 +96,7 @@ loadTeam(); setInterval(loadTeam,30000);
 // Donor dashboard + graph
 async function loadDonor(){
 try{
-let r=await fetch("https://stats.foldingathome.org/api/donor/366956");
+let r=await fetch("/data/donor.json");
 let d=await r.json();
 document.getElementById("donorBox").innerHTML=`
 <b>Your Total Credit:</b> ${d.credit.toLocaleString()}<br>
